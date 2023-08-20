@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
+
 class GoogleSearchSuggestions:
     def __init__(self):
         self.driver = webdriver.Firefox()
@@ -16,7 +17,8 @@ class GoogleSearchSuggestions:
     def get_suggestions(self):
         search_text_google_suggestions = self.driver.find_elements(
             By.XPATH, "//ul[@role=\"listbox\"]/li")
-        suggestion_list = [suggestion.text for suggestion in search_text_google_suggestions]
+        suggestion_list = [
+            suggestion.text for suggestion in search_text_google_suggestions]
         return suggestion_list
 
     def get_max_min_suggestions(self, search_query):
