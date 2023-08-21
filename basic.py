@@ -2,16 +2,16 @@ from GoogleSearchSuggestions import GoogleSearchSuggestions
 import openpyxl
 import datetime
 
-current_day = datetime.datetime.now()
+current_day = datetime.datetime.now().strftime("%A")
 workbook = openpyxl.load_workbook('Excel.xlsx')
 sheet_names = workbook.sheetnames
 
 google_search = GoogleSearchSuggestions()
 
 for sheet_name in sheet_names:
-    if sheet_name == current_day.strftime("%A"):
+    if sheet_name == current_day:
         worksheet = workbook[sheet_name]
-        print(f"Processing data in sheet :'{sheet_name}'")
+        print(f"Processing data of workbook :'{sheet_name}'")
 
         rows = 2
 
@@ -26,7 +26,7 @@ print(f"Completed")
 workbook.save(f"Excel.xlsx")
 google_search.close_browser()
 
-print(f"Excel files workbook {sheet_name} 'Excel.xlsx' updated with data.")
+print(f"Excel files workbook {current_day} 'Excel.xlsx' updated with data.")
 
 
 
