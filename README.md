@@ -6,8 +6,18 @@ This repo is for to automate google search from Excel file keys and store the su
 
 ## To run
 
-```Python
-    git clone https://github.com/mdobns/GoogleSearchSuggestionAutomation
+### First install <i>Selenium</i>
 
-    python Main.py
+```Python
+pip install selenium
+```
+
+### Then Clone & run
+
+```Python
+git clone https://github.com/mdobns/GoogleSearchSuggestionAutomation
+```
+
+```Python
+python Main.py
 ```
